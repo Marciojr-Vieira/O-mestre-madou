@@ -1,0 +1,668 @@
+[
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Diarista",
+    "slug": "diarista"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Eletricista",
+    "slug": "eletricista"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Encanador",
+    "slug": "encanador"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Ar condicionado",
+    "slug": "ar-condicionado"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Geladeira e freezer",
+    "slug": "geladeira-e-freezer"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Máquina de lavar",
+    "slug": "maquina-de-lavar"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Notebook",
+    "slug": "notebook"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Celular",
+    "slug": "celular"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Televisão",
+    "slug": "televisao"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Computador",
+    "slug": "computador"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Impressora",
+    "slug": "impressora"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Fogão e cooktop",
+    "slug": "fogao-e-cooktop"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Micro-ondas",
+    "slug": "micro-ondas"
+  },
+  {
+    "categorySlug": "assistencia-tecnica",
+    "category": "Assistência técnica",
+    "name": "Cabeamento e redes",
+    "slug": "cabeamento-e-redes"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Reforço escolar",
+    "slug": "reforco-escolar"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Idiomas",
+    "slug": "idiomas"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Música",
+    "slug": "musica"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Dança",
+    "slug": "danca"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Informática",
+    "slug": "informatica"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Esportes",
+    "slug": "esportes"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Pré-vestibular",
+    "slug": "pre-vestibular"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Concursos",
+    "slug": "concursos"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Artes",
+    "slug": "artes"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Fotografia",
+    "slug": "fotografia"
+  },
+  {
+    "categorySlug": "aulas",
+    "category": "Aulas",
+    "name": "Ensino profissionalizante",
+    "slug": "ensino-profissionalizante"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Mecânica geral",
+    "slug": "mecanica-geral"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Auto elétrico",
+    "slug": "auto-eletrico"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Funilaria",
+    "slug": "funilaria"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Pintura automotiva",
+    "slug": "pintura-automotiva"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Guincho",
+    "slug": "guincho"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Borracharia",
+    "slug": "borracharia"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Higienização e polimento",
+    "slug": "higienizacao-e-polimento"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Insulfilm",
+    "slug": "insulfilm"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Som automotivo",
+    "slug": "som-automotivo"
+  },
+  {
+    "categorySlug": "autos",
+    "category": "Autos",
+    "name": "Martelinho de ouro",
+    "slug": "martelinho-de-ouro"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Contador",
+    "slug": "contador"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Advogado",
+    "slug": "advogado"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Tradutores",
+    "slug": "tradutores"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Despachante",
+    "slug": "despachante"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Corretor",
+    "slug": "corretor"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Assessoria de imprensa",
+    "slug": "assessoria-de-imprensa"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Escrita e conteúdo",
+    "slug": "escrita-e-conteudo"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Recrutamento e seleção",
+    "slug": "recrutamento-e-selecao"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Guia de turismo",
+    "slug": "guia-de-turismo"
+  },
+  {
+    "categorySlug": "consultoria",
+    "category": "Consultoria",
+    "name": "Administração de imóveis",
+    "slug": "administracao-de-imoveis"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Desenvolvimento de sites",
+    "slug": "desenvolvimento-de-sites"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Apps para smartphone",
+    "slug": "apps-para-smartphone"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Criação de logos",
+    "slug": "criacao-de-logos"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Marketing digital",
+    "slug": "marketing-digital"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "UI design",
+    "slug": "ui-design"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Edição de vídeos",
+    "slug": "edicao-de-videos"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Fotografia",
+    "slug": "fotografia"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Ilustração",
+    "slug": "ilustracao"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Web design",
+    "slug": "web-design"
+  },
+  {
+    "categorySlug": "design-e-tecnologia",
+    "category": "Design e tecnologia",
+    "name": "Animação motion",
+    "slug": "animacao-motion"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Buffet completo",
+    "slug": "buffet-completo"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Decoração de festas",
+    "slug": "decoracao-de-festas"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "DJ",
+    "slug": "dj"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Bandas e cantores",
+    "slug": "bandas-e-cantores"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Garçons",
+    "slug": "garcons"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Bartender",
+    "slug": "bartender"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Organização de eventos",
+    "slug": "organizacao-de-eventos"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Confeiteira",
+    "slug": "confeiteira"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Churrasqueiro",
+    "slug": "churrasqueiro"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Florista",
+    "slug": "florista"
+  },
+  {
+    "categorySlug": "eventos",
+    "category": "Eventos",
+    "name": "Celebrante",
+    "slug": "celebrante"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Cabeleireiro",
+    "slug": "cabeleireiro"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Manicure e pedicure",
+    "slug": "manicure-e-pedicure"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Maquiador",
+    "slug": "maquiador"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Barbeiro",
+    "slug": "barbeiro"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Depilação",
+    "slug": "depilacao"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Design de sobrancelhas",
+    "slug": "design-de-sobrancelhas"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Esteticista",
+    "slug": "esteticista"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Corte e costura",
+    "slug": "corte-e-costura"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Personal stylist",
+    "slug": "personal-stylist"
+  },
+  {
+    "categorySlug": "moda-e-beleza",
+    "category": "Moda e beleza",
+    "name": "Podólogo",
+    "slug": "podologo"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Psicólogo",
+    "slug": "psicologo"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Nutricionista",
+    "slug": "nutricionista"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Fisioterapeuta",
+    "slug": "fisioterapeuta"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Cuidador de pessoas",
+    "slug": "cuidador-de-pessoas"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Enfermeira",
+    "slug": "enfermeira"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Fonoaudiólogo",
+    "slug": "fonoaudiologo"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Terapia ocupacional",
+    "slug": "terapia-ocupacional"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Doula",
+    "slug": "doula"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Dentista",
+    "slug": "dentista"
+  },
+  {
+    "categorySlug": "saude",
+    "category": "Saúde",
+    "name": "Terapias alternativas",
+    "slug": "terapias-alternativas"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Babá",
+    "slug": "baba"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Cozinheira",
+    "slug": "cozinheira"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Passadeira",
+    "slug": "passadeira"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Motorista",
+    "slug": "motorista"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Personal organizer",
+    "slug": "personal-organizer"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Adestrador de cães",
+    "slug": "adestrador-de-caes"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Passeador de cães",
+    "slug": "passeador-de-caes"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Lavadeira",
+    "slug": "lavadeira"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Limpeza de piscina",
+    "slug": "limpeza-de-piscina"
+  },
+  {
+    "categorySlug": "familia",
+    "category": "Serviços Domésticos",
+    "name": "Serviços para pets",
+    "slug": "servicos-para-pets"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Pintor",
+    "slug": "pintor"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Pedreiro",
+    "slug": "pedreiro"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Marido de aluguel",
+    "slug": "marido-de-aluguel"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Montador de móveis",
+    "slug": "montador-de-moveis"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Marceneiro",
+    "slug": "marceneiro"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Jardinagem",
+    "slug": "jardinagem"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Chaveiro",
+    "slug": "chaveiro"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Mudanças e carretos",
+    "slug": "mudancas-e-carretos"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Arquiteto",
+    "slug": "arquiteto"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Gesso e drywall",
+    "slug": "gesso-e-drywall"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Vidraceiro",
+    "slug": "vidraceiro"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Dedetizador",
+    "slug": "dedetizador"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Limpeza pós-obra",
+    "slug": "limpeza-pos-obra"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Engenheiro",
+    "slug": "engenheiro"
+  },
+  {
+    "categorySlug": "reformas-e-reparos",
+    "category": "Reformas e Reparos",
+    "name": "Design de interiores",
+    "slug": "design-de-interiores"
+  }
+]

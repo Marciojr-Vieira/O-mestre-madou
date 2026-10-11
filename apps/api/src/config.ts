@@ -1,0 +1,10 @@
+import 'dotenv/config';
+import { randomBytes } from 'node:crypto';
+import { z } from 'zod';
+import { assertHostedConfiguration } from './deployment-policy';
+const identifier = z.string().regex(/^[a-z][a-z0-9_]{0,62}$/, 'Identificador de banco inválido.');
+const envSchema = z.object({ PORT: z.coerce.number().int().min(0).max(65535).default(4000), WEB_ORIGIN: z.string().url().default('http://localhost:3000'), APP_URL: z.string().url().default('http://localhost:3000'), DEMO_MODE: z.enum(['true','false']).default('true'), DATABASE_MODE: z.enum(['embedded','postgres']).default('embedded'), DATA_DIR: z.string().default('.data/postgres'), DATABASE_URL: z.string().optional(), DATABASE_SCHEMA: identifier.default('public'), DATABASE_SSL: z.enum(['disable','verify-full']).default('disable'), DATABASE_CA_FILE: z.string().optional(), DATABASE_ASSETS_DIR: z.string().default('.'), DATABASE_POOL_MAX: z.coerce.number().int().min(2).max(20).default(6), DATABASE_MIGRATE: z.enum(['true','false']).default('true'), DATABASE_RUNTIME_ROLE: identifier.optional(), REDIS_URL: z.string().optional(), JWT_SECRET: z.string().min(32).optional(), PAYMENT_WEBHOOK_SECRET: z.string().min(32).optional(), NODE_ENV: z.string().optional() });
+export const config = envSchema.parse(process.env);
+if (config.DATABASE_MODE === 'postgres' && !config.DATABASE_URL) throw new Error('DATABASE_URL é obrigatória no modo PostgreSQL.');
+if (config.NODE_ENV === 'production') assertHostedConfiguration(config);
+export const jwtSecret = config.JWT_SECRET ?? randomBytes(48).toString('hex');

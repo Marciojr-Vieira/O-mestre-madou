@@ -1,0 +1,32 @@
+[build]
+  base = "."
+  command = "pnpm build:netlify"
+  publish = "apps/web/.next"
+  functions = ".netlify-api/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PNPM_VERSION = "10.18.3"
+
+[functions.api]
+  node_bundler = "none"
+  included_files = [".netlify-api/runtime/**", ".netlify-api/db/**", ".netlify-api/certs/**"]
+
+[[redirects]]
+  from = "/v1/*"
+  to = "/.netlify/functions/api/v1/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/v1/*"
+  [headers.values]
+    Cache-Control = "no-store"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"

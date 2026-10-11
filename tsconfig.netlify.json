@@ -1,0 +1,6 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "noEmit": false, "rootDir": ".", "outDir": ".netlify-api", "declaration": false, "sourceMap": false },
+  "include": ["apps/api/src/**/*.ts", "packages/shared/src/**/*.ts", "netlify/functions/**/*.ts"],
+  "exclude": ["node_modules", "apps/web", "tests", ".netlify-api"]
+}

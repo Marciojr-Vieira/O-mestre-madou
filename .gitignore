@@ -1,0 +1,17 @@
+node_modules/
+.next/
+.env
+.env.*
+!.env.example
+.data/
+.tools/
+*.tsbuildinfo
+coverage/
+NETLIFY.env
+NETLIFY.demo.env
+NETLIFY.production.env
+NETLIFY.*.env
+.netlify/
+.netlify-api/
+output/
+**/.netlify/
