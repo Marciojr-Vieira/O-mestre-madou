@@ -89,6 +89,8 @@ Em um site já criado, use `pnpm --package=netlify-cli dlx netlify link --filter
 | JWT_SECRET | Segredo estável da sessão; não reutilizar valor de exemplo |
 | AWS_LAMBDA_JS_RUNTIME | Runtime da Function alinhado ao Node 22 |
 
+Na importação, marque como segredo somente DATABASE_URL e JWT_SECRET. As demais variáveis são configuração pública: o nome do papel e do schema aparecem nas migrations e o build as ignora no secrets scanning via `SECRETS_SCAN_OMIT_KEYS` em netlify.toml. Não adicione chaves sensíveis a essa lista.
+
 No pacote final da Function, `db/` e `certs/` ficam na raiz. Por isso, use `DATABASE_ASSETS_DIR=.` e `DATABASE_CA_FILE=certs/supabase-ca.crt` exatamente como no arquivo gerado. Esses caminhos são diferentes dos diretórios intermediários de compilação.
 
 Não são necessárias chaves `NEXT_PUBLIC_SUPABASE_*`: o navegador usa `/v1`, e a API conecta ao PostgreSQL. Não importar PORT, DATA_DIR, caminhos `.tools`, credenciais Docker, REDIS_URL ou segredos de gateways ainda não implementados. NODE_ENV é configurado pela plataforma.

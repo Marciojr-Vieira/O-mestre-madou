@@ -7,6 +7,10 @@
 [build.environment]
   NODE_VERSION = "22"
   PNPM_VERSION = "10.18.3"
+  # Configurações públicas (papel, schema, modos, caminhos) aparecem em migrations,
+  # exemplos e no pacote da Function. Não incluir DATABASE_URL, JWT_SECRET ou
+  # PAYMENT_WEBHOOK_SECRET: esses continuam protegidos pelo secrets scanning.
+  SECRETS_SCAN_OMIT_KEYS = "APP_URL,WEB_ORIGIN,DEMO_MODE,DATABASE_MODE,DATABASE_SCHEMA,DATABASE_SSL,DATABASE_CA_FILE,DATABASE_ASSETS_DIR,DATABASE_POOL_MAX,DATABASE_MIGRATE,DATABASE_RUNTIME_ROLE,AWS_LAMBDA_JS_RUNTIME"
 
 [functions.api]
   node_bundler = "none"

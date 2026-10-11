@@ -57,6 +57,8 @@ Configurar gateway Pix/cartão real e SMS, com assinatura de webhooks, reconcili
 
 ## Log de sessões
 
+- 11/10/2026 — Deploy Netlify bloqueado pelo secrets scanning corrigido: valores de configuração pública (papel elo_runtime, schema, modos, caminhos) estavam marcados como segredo e aparecem em migrations e exemplos. Adicionado SECRETS_SCAN_OMIT_KEYS somente para essas chaves; DATABASE_URL e JWT_SECRET continuam protegidos. Nenhum segredo real encontrado nos arquivos versionados. ADR-015.
+
 - 11/10/2026 — Preparação do envio ao GitHub para integração com Netlify: conta conectada brn-mascarenhas identificada, arquivos privados excluídos e .gitignore ampliado para variantes de .env. Criação do repositório o-mestre-mandou pendente; o conector disponível não oferece essa operação.
 
 - 11/10/2026 — URL da demonstração confirmada: https://o-mestre-mandou.netlify.app. Variáveis APP_URL/WEB_ORIGIN dos perfis de demonstração, exemplo público e guia atualizados; schema elo_demo e origem local conferidos. Arquivos prontos para importação no painel; sem publicação remota nesta etapa.
