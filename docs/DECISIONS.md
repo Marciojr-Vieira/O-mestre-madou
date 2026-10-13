@@ -2,11 +2,13 @@
 
 ## ADR-018 — Recuperação publicada e demonstração completa (13/10/2026)
 
-O usuário pediu correção dos erros 502, dados de produção na demonstração e credenciais de ADM. O erro público foi reproduzido: Runtime.UserCodeSyntaxError antes de conectar ao PostgreSQL. A correção CommonJS da ADR-017 será publicada no site Netlify a939522a-deb6-4d2f-b9e1-e05bc32f2e38, autenticado pelo proprietário. O site está atualmente vinculado ao repositório Marciojr-Vieira/O-mestre-madou; a conta brn-mascarenhas não é o destino autorizado.
+O usuário pediu correção dos erros 502, dados de produção na demonstração e credenciais de ADM. O erro público foi reproduzido: Runtime.UserCodeSyntaxError antes de conectar ao PostgreSQL. A correção CommonJS da ADR-017 foi publicada no site Netlify a939522a-deb6-4d2f-b9e1-e05bc32f2e38, autenticado pelo proprietário. O site está atualmente vinculado ao repositório Marciojr-Vieira/O-mestre-madou; a conta brn-mascarenhas não é o destino autorizado.
 
 Criado elo_full_demo a partir de snapshot consistente de elo, sem alterar os schemas anteriores. Oito contas da origem são fictícias. Copiadas 25 tabelas de negócio/configuração, com igualdade de registros, ordem por dependências, valores originais de identidade e atualização de sequências. Carteiras reconstruídas exclusivamente pelo ledger, com verificação dos saldos e slots. Sessões de autenticação e desafios OTP foram excluídos. Backup privado preservado. Criada conta pessoal de ADM com senha aleatória e credenciais em arquivo ignorado pelo Git. Perfis privados de demonstração passaram ao novo schema; perfil real foi preservado.
 
 O deploy pelo GitHub eliminou o erro de carregamento. A validação pública mostrou que o runtime da Function não preenche NODE_ENV, embora o build seja otimizado. Cookies de sessão agora determinam Secure pela origem HTTPS configurada em WEB_ORIGIN, preservando o desenvolvimento HTTP local. Um teste de regressão cobre a ausência de NODE_ENV no adaptador serverless.
+
+Resultado: deploy 6ace6dc1c2f868a45e9766a9, commit 3eddef4, publicado e validado. Quarenta testes passaram. Pela API pública, verificadas autorização, sessão HTTPS/refresh, ADM por senha, catálogo, oferta fixa, atalhos configuráveis, compra simulada com confirmação repetida e débito de contato com repetição idempotente. O teste acrescentou um pedido demonstrativo e um pagamento simulado identificados em output/netlify/live-validation.json. Navegador Chromium validou login, painel ADM, logout e celular, com capturas em output/playwright. Envio local incompleto foi cancelado após sucesso do deploy pelo GitHub.
 
 ## ADR-017 — Entrada CommonJS da API no Lambda (13/10/2026)
 

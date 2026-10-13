@@ -24,3 +24,9 @@ pnpm.cmd db-verify
 Uma nova cópia não troca automaticamente o banco do site. Primeiro valide o destino e então configure `DATABASE_SCHEMA` nos perfis de demonstração e no Netlify. Migrations são aplicadas antes da cópia; a Function continua com `DATABASE_MIGRATE=false`.
 
 O site em demonstração simula telefone e compra de moedas. Checkout real de serviços, gateway financeiro e SMS reais continuam fora desta entrega.
+
+## Verificação publicada em 13/10/2026
+
+Deploy `6ace6dc1c2f868a45e9766a9`, commit `3eddef4`, em https://o-mestre-mandou.netlify.app. API sem os erros 502 anteriores; catálogo e oferta fixa consultados, ADM autenticado por senha, cookies HTTPS/refresh conferidos, acessos rápidos e controle administrativo testados. Compra simulada e liberação de contato verificadas com repetição da mesma operação para confirmar que não há crédito/débito duplicado. Um pedido demonstrativo e um pagamento simulado permanecem no banco como resultado do teste; nenhum valor real foi cobrado.
+
+Quarenta testes automatizados passaram. Chromium verificou a interface desktop/celular, entrada do ADM e logout sem erros de JavaScript ou respostas 5xx. Relatório local em `output/netlify/live-validation.json` e capturas em `output/playwright/netlify-demo-*.png`.
