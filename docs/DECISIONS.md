@@ -123,3 +123,7 @@ O usuário solicitou cadastros completos e controle administrativo dos acessos r
 O telefone permanece pendente até confirmação manual pelo ADM, com justificativa, confirmação explícita e auditoria. Aprovação profissional continua independente e o desbloqueio preserva os requisitos financeiros existentes. O novo perfil recebe as oportunidades já existentes compatíveis ao consultar seu painel.
 
 A demonstração local foi isolada em `elo_demo`; o schema `elo` foi preservado e continua no arquivo de publicação. Visibilidade dos atalhos é persistida em application_settings, com RLS e escrita restrita ao backend. Produção e schemas reais não podem habilitar atalhos pelo painel. Há comandos locais para promover uma conta própria de cliente a ADM e recuperar somente atalhos de demonstração. Nenhum provedor externo foi contratado ou mensagem enviada. Compra de moedas real continua pendente de gateway.
+
+## ADR-015 — Secrets scanning do Netlify restrito a valores sensíveis
+
+Em 11/10/2026, o deploy falhou porque o secrets scanning encontrou valores de sete variáveis importadas como secretas, como `DATABASE_RUNTIME_ROLE=elo_runtime`. Esses valores são configuração pública: nomes de papel e schema estão nas migrations já aplicadas (que não podem ser alteradas), e modos/caminhos estão em exemplos, documentação e no pacote da Function. `netlify.toml` passa a declarar `SECRETS_SCAN_OMIT_KEYS` apenas para essas chaves de configuração. DATABASE_URL, JWT_SECRET e PAYMENT_WEBHOOK_SECRET permanecem verificados; o scanning não foi desativado nem foram omitidos caminhos.
