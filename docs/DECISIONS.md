@@ -6,6 +6,8 @@ O usuário pediu correção dos erros 502, dados de produção na demonstração
 
 Criado elo_full_demo a partir de snapshot consistente de elo, sem alterar os schemas anteriores. Oito contas da origem são fictícias. Copiadas 25 tabelas de negócio/configuração, com igualdade de registros, ordem por dependências, valores originais de identidade e atualização de sequências. Carteiras reconstruídas exclusivamente pelo ledger, com verificação dos saldos e slots. Sessões de autenticação e desafios OTP foram excluídos. Backup privado preservado. Criada conta pessoal de ADM com senha aleatória e credenciais em arquivo ignorado pelo Git. Perfis privados de demonstração passaram ao novo schema; perfil real foi preservado.
 
+O deploy pelo GitHub eliminou o erro de carregamento. A validação pública mostrou que o runtime da Function não preenche NODE_ENV, embora o build seja otimizado. Cookies de sessão agora determinam Secure pela origem HTTPS configurada em WEB_ORIGIN, preservando o desenvolvimento HTTP local. Um teste de regressão cobre a ausência de NODE_ENV no adaptador serverless.
+
 ## ADR-017 — Entrada CommonJS da API no Lambda (13/10/2026)
 
 O site publicado retornou 502 em `/v1/health`, com `Runtime.UserCodeSyntaxError: Unexpected token 'export'`. A inspeção do ZIP anterior confirmou `api.js` na raiz com `export { handler } from './functions/api.mjs'`, sem declaração de tipo ESM na raiz. A falha ocorre no carregamento do Lambda, antes da inicialização NestJS ou conexão PostgreSQL.

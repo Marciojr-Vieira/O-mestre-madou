@@ -26,7 +26,7 @@ export class Auth {
     const user = required((await this.db.query('SELECT id,name,role,phone_verified_at FROM users WHERE id=$1 AND status=\'active\'', [userId]))[0]);
     const id = randomUUID(), secret = randomBytes(40).toString('hex');
     await this.db.query("INSERT INTO refresh_sessions VALUES ($1,$2,$3,now()+interval '30 days')", [id, userId, digest(secret)]);
-    res.cookie('elo_refresh', `${id}.${secret}`, { httpOnly: true, sameSite: 'strict', secure: config.NODE_ENV === 'production', path: '/v1/auth', maxAge: 30*86400000 });
+    res.cookie('elo_refresh', `${id}.${secret}`, { httpOnly: true, sameSite: 'strict', secure: new URL(config.WEB_ORIGIN).protocol === 'https:', path: '/v1/auth', maxAge: 30*86400000 });
     return { user: { id: Number(user.id), name: user.name, role: user.role, phoneVerified: Boolean(user.phone_verified_at) }, token: jwt.sign({ purpose: 'access' }, jwtSecret, { subject: String(userId), expiresIn: '15m' }) };
   }
   async refresh(req: Request, res: Response) {

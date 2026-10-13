@@ -39,3 +39,17 @@ test('serverless adapter keeps refresh cookies and origin protection',async()=>{
   const refreshedCookie=refreshed.multiValueHeaders?.['set-cookie']?.[0]??refreshed.headers?.['set-cookie'];
   assert.ok(refreshedCookie);assert.notEqual(refreshedCookie,cookies[0]);
 });
+
+test('HTTPS deployments issue Secure cookies even when the host omits NODE_ENV',async()=>{
+  const origin=config.WEB_ORIGIN,environment=config.NODE_ENV;
+  try {
+    config.WEB_ORIGIN='https://o-mestre-mandou.netlify.app';config.NODE_ENV=undefined;
+    const response=await invoke('/v1/auth/demo','POST',{role:'admin'});
+    assert.equal(response.statusCode,201);
+    const cookie=response.multiValueHeaders?.['set-cookie']?.[0]??response.headers?.['set-cookie'];
+    assert.equal(typeof cookie,'string');
+    assert.match(String(cookie),/; Secure/);
+    assert.match(String(cookie),/; HttpOnly/);
+    assert.match(String(cookie),/; SameSite=Strict/);
+  } finally { config.WEB_ORIGIN=origin;config.NODE_ENV=environment; }
+});
