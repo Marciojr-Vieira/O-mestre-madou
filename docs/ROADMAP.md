@@ -57,6 +57,10 @@ Configurar gateway Pix/cartão real e SMS, com assinatura de webhooks, reconcili
 
 ## Log de sessões
 
+- 13/10/2026 — Supabase elo_full_demo criado com os dados completos de elo: 111 serviços, 14 pedidos, 84 leads, uma oferta fixa e ledger conferido. Conta de ADM com senha própria criada; dados de acesso em arquivo privado. Bancos anteriores preservados, sessões antigas não copiadas. Perfil do Netlify atualizado para a demonstração completa; validação/publicação da correção CommonJS em andamento.
+
+- 13/10/2026 — Erros 502 do Netlify diagnosticados na URL publicada: `Runtime.UserCodeSyntaxError: Unexpected token 'export'`. ZIP anterior tinha entrada api.js com export ESM; preparador corrigido para CommonJS api.cjs e remoção do wrapper antigo. Lint, TypeScript, 39 testes, build web (118 páginas) e build da API aprovados. ZIP gerado pelo empacotador oficial, com Node 22 e bundler none, extraído e executado pela entrada api.js: health/catalog/options 200, 111 serviços e refresh anônimo 401 contra Supabase, com seed de demonstração desativado apenas no processo de verificação. Guia atualizado e ADR-017 registrada. Correção ainda não publicada: CLI Netlify sem autenticação; necessário novo deploy do código corrigido.
+
 - 11/10/2026 — Preparação do envio ao GitHub para integração com Netlify: conta conectada brn-mascarenhas identificada, arquivos privados excluídos e .gitignore ampliado para variantes de .env. Criação do repositório o-mestre-mandou pendente; o conector disponível não oferece essa operação.
 
 - 11/10/2026 — URL da demonstração confirmada: https://o-mestre-mandou.netlify.app. Variáveis APP_URL/WEB_ORIGIN dos perfis de demonstração, exemplo público e guia atualizados; schema elo_demo e origem local conferidos. Arquivos prontos para importação no painel; sem publicação remota nesta etapa.

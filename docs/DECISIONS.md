@@ -1,5 +1,19 @@
 # Decisões
 
+## ADR-018 — Recuperação publicada e demonstração completa (13/10/2026)
+
+O usuário pediu correção dos erros 502, dados de produção na demonstração e credenciais de ADM. O erro público foi reproduzido: Runtime.UserCodeSyntaxError antes de conectar ao PostgreSQL. A correção CommonJS da ADR-017 será publicada no site Netlify a939522a-deb6-4d2f-b9e1-e05bc32f2e38, autenticado pelo proprietário. O site está atualmente vinculado ao repositório Marciojr-Vieira/O-mestre-madou; a conta brn-mascarenhas não é o destino autorizado.
+
+Criado elo_full_demo a partir de snapshot consistente de elo, sem alterar os schemas anteriores. Oito contas da origem são fictícias. Copiadas 25 tabelas de negócio/configuração, com igualdade de registros, ordem por dependências, valores originais de identidade e atualização de sequências. Carteiras reconstruídas exclusivamente pelo ledger, com verificação dos saldos e slots. Sessões de autenticação e desafios OTP foram excluídos. Backup privado preservado. Criada conta pessoal de ADM com senha aleatória e credenciais em arquivo ignorado pelo Git. Perfis privados de demonstração passaram ao novo schema; perfil real foi preservado.
+
+## ADR-017 — Entrada CommonJS da API no Lambda (13/10/2026)
+
+O site publicado retornou 502 em `/v1/health`, com `Runtime.UserCodeSyntaxError: Unexpected token 'export'`. A inspeção do ZIP anterior confirmou `api.js` na raiz com `export { handler } from './functions/api.mjs'`, sem declaração de tipo ESM na raiz. A falha ocorre no carregamento do Lambda, antes da inicialização NestJS ou conexão PostgreSQL.
+
+O preparador passa a gerar `functions/api.cjs` com exportação CommonJS, alinhada à compilação TypeScript da API, e remove o wrapper antigo `api.mjs` em builds incrementais. As opções de empacotamento continuam no `netlify.toml`. Teste de regressão executa o preparador em diretório temporário e carrega uma entrada Lambda CommonJS com o wrapper gerado e runtime isolado. Regras financeiras, banco e migrations permanecem preservados. Publicação remota depende de autenticação Netlify; a correção local precisa de novo deploy para chegar ao site.
+
+Validação: lint, TypeScript, 39 testes, build web e API aprovados. O empacotador oficial gerou ZIP com entrada `module.exports = require('./functions/api.cjs')`. O ZIP extraído foi executado pela entrada api.js contra Supabase: health, catálogo e opções retornaram 200; catálogo com 111 serviços; refresh anônimo 401. DEMO_MODE foi desativado somente no processo de verificação para evitar seed; os perfis privados de publicação não foram alterados.
+
 ## ADR-016 — Código no GitHub para deploy pelo Netlify (11/10/2026)
 
 O usuário solicitou hospedar o código no GitHub para conectar o projeto ao Netlify. Conta autenticada: brn-mascarenhas. Repositório proposto: o-mestre-mandou, privado. Enviar código, imagens públicas, migrations, testes, documentação e modelos de variáveis; excluir credenciais, bancos locais, dependências e pacotes gerados. Variáveis privadas continuam sendo importadas separadamente no Netlify. O conector disponível permite escrita de arquivos, mas não cria repositórios; essa criação foi solicitada ao proprietário antes do envio.

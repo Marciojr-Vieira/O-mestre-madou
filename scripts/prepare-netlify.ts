@@ -1,4 +1,4 @@
-import { cp, mkdir, access, writeFile } from 'node:fs/promises';
+import { cp, mkdir, access, writeFile, rm } from 'node:fs/promises';
 import { constants } from 'node:fs';
 
 async function main() {
@@ -10,7 +10,10 @@ async function main() {
   await cp('.netlify-api/packages','.netlify-api/runtime/packages',{recursive:true});
   await cp('.netlify-api/netlify','.netlify-api/runtime/netlify',{recursive:true});
   await mkdir('.netlify-api/functions',{recursive:true});
-  await writeFile('.netlify-api/functions/api.mjs',`export { handler } from '../runtime/netlify/functions/api.js';\nexport const config = { nodeBundler: 'none', includedFiles: ['.netlify-api/runtime/**', '.netlify-api/db/**', '.netlify-api/certs/**'] };\n`);
+  // Lambda loads the legacy handler through a CommonJS entry point. Keep the
+  // wrapper in the same format as the compiled NestJS runtime (see netlify.toml).
+  await rm('.netlify-api/functions/api.mjs',{force:true});
+  await writeFile('.netlify-api/functions/api.cjs',`exports.handler = require('../runtime/netlify/functions/api.js').handler;\n`);
   console.log('API compilada, migrations e certificado preparados para Netlify.');
 }
 main().catch(()=>{console.error('Não foi possível preparar os arquivos do Netlify.');process.exitCode=1;});

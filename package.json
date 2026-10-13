@@ -22,7 +22,9 @@
                     "build:netlify":  "pnpm build:api \u0026\u0026 pnpm build",
                     "netlify-env":  "tsx scripts/netlify-env.ts",
                     "admin-promote":  "tsx scripts/admin-promote.ts",
-                    "demo-access":  "tsx scripts/demo-access.ts"
+                    "demo-access":  "tsx scripts/demo-access.ts",
+                    "demo-copy-production":  "tsx scripts/demo-copy-production.ts",
+                    "demo-admin-create":  "tsx scripts/demo-admin-create.ts"
                 },
     "dependencies":  {
                          "@electric-sql/pglite":  "^0.3.14",

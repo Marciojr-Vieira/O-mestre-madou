@@ -2,7 +2,7 @@
 
 O site Next.js e a API NestJS são publicados no mesmo projeto Netlify. As rotas `/v1/*` usam uma Netlify Function e o PostgreSQL existente na Supabase. Não é necessário deixar o computador ligado nem contratar uma segunda hospedagem da API para esta configuração.
 
-A versão atual está preparada para **demonstração online**: `DEMO_MODE=true` e `DATABASE_SCHEMA=elo_demo`. O catálogo, cadastros, pedidos e painéis usam esse schema separado da operação real. Os dados persistem entre deploys, permitindo continuar modificando o site sem reiniciar a demonstração. SMS e pagamentos são simulados, sem cobranças. Use dados fictícios, pois os atalhos dão acesso a contas compartilhadas, inclusive ADM.
+A versão atual usa **demonstração online**: `DEMO_MODE=true` e `DATABASE_SCHEMA=elo_full_demo`. Esse schema recebeu uma cópia dos dados de `elo` em 13/10/2026: 111 serviços, 14 pedidos, 84 leads, seis profissionais, uma oferta fixa e histórico de moedas. Os schemas anteriores foram preservados. Sessões de login e desafios de telefone não são transferidos; carteiras são reconstruídas pelo ledger e conferidas. Dados persistem entre deploys. SMS e pagamentos são simulados, sem cobranças. Use dados fictícios, pois os atalhos dão acesso a contas compartilhadas, inclusive ADM.
 
 ## 1. Arquivo das variáveis
 
@@ -79,7 +79,7 @@ Em um site já criado, use `pnpm --package=netlify-cli dlx netlify link --filter
 | DEMO_MODE=true | Ativa os recursos de demonstração, OTP e pagamentos simulados |
 | DATABASE_MODE=postgres | Impede uso de banco embarcado efêmero |
 | DATABASE_URL | URI PostgreSQL do Session pooler, com senha codificada na URL |
-| DATABASE_SCHEMA=elo_demo | Dados da demonstração, separados dos registros reais em elo |
+| DATABASE_SCHEMA=elo_full_demo | Cópia completa da operação para demonstração, separada de elo |
 | DATABASE_SSL=verify-full | Valida o certificado TLS |
 | DATABASE_CA_FILE | Caminho do certificado incluído na Function |
 | DATABASE_ASSETS_DIR | Caminho dos arquivos de versão incluídos no pacote |
@@ -106,9 +106,11 @@ O login administrativo de PostgreSQL com SET ROLE é a configuração existente.
 7. Logs das Functions não mostram URI, senha ou dados pessoais.
 8. Em **Entrar**, aparecem os atalhos Cliente, Profissional e Admin. No ADM, abra **Cadastros e demonstração → Acessos rápidos de demonstração** para desativar ou ativar novamente. O controle é salvo no banco e sobrevive a novos deploys. Desativar atalhos não encerra sessões abertas nem desativa as simulações.
 
-Se os atalhos estiverem ocultos e não houver outra sessão de ADM aberta, recupere pelo terminal com `pnpm.cmd demo-access on`, usando o `.env` local que aponta para `elo_demo`. O site local e a demonstração online compartilham esse schema: mudanças em cadastros, pedidos e configurações aparecem nos dois.
+Se os atalhos estiverem ocultos e não houver outra sessão de ADM aberta, recupere pelo terminal com `pnpm.cmd demo-access on`, usando o `.env` local que aponta para `elo_full_demo`. O site local e a demonstração online compartilham esse schema: mudanças em cadastros, pedidos e configurações aparecem nos dois. O acesso pessoal do proprietário usa e-mail/senha no login normal; credenciais foram entregues somente no arquivo privado `.data/ACESSO-ADM-elo_full_demo.txt`, ignorado pelo Git.
 
 Se `/v1/*` responder 503, conferir variáveis no escopo Functions, origem, certificado, credenciais, migrations e conectividade do pooler. Se responder HTML, conferir redirects e ativação do adaptador Next.js. A rede da Supabase deve permitir conexões da plataforma, conforme a configuração do projeto.
+
+Se todas as rotas `/v1/*`, inclusive health, responderem **502** com `Runtime.UserCodeSyntaxError` e `Unexpected token 'export'`, a Function falhou antes de iniciar a API. O empacotamento anterior criava uma entrada ESM em `api.js`, carregada como CommonJS pelo Lambda. O build corrigido gera `api.cjs`, compatível com a API compilada. Publique o código atualizado com **Clear cache and deploy site** no painel Netlify, usando `pnpm build:netlify`; alterar apenas as variáveis não corrige esse erro de sintaxe. Depois, confira `/v1/health`, `/v1/catalog` e `/v1/auth/options`; refresh anônimo pode retornar 401 normalmente.
 
 ## 6. Limites da entrega
 

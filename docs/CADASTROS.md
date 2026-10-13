@@ -25,7 +25,7 @@ A análise de CPF/CNPJ permanece na aba **Moderação**. Aprovação documental 
 
 ## Ambientes
 
-O `.env` local e o `NETLIFY.env` atual usam Supabase com `DATABASE_SCHEMA=elo_demo` e `DEMO_MODE=true`. A demonstração pode funcionar online no Netlify enquanto o site recebe modificações. Ela tem catálogo e dados fictícios próprios; alterações locais e online compartilham o mesmo schema. Os dados históricos de `elo` foram preservados. O perfil de operação real está separado em `NETLIFY.production.env`, com `DEMO_MODE=false`.
+O `.env` local e o `NETLIFY.env` atual usam Supabase com `DATABASE_SCHEMA=elo_full_demo` e `DEMO_MODE=true`. A demonstração funciona online no Netlify enquanto o site recebe modificações. Ela recebeu os dados completos de `elo`, conforme [DEMONSTRACAO-DADOS.md](DEMONSTRACAO-DADOS.md); alterações locais e online compartilham o mesmo schema. Os schemas anteriores `elo` e `elo_demo` foram preservados. O perfil de operação real está separado em `NETLIFY.production.env`, com `DEMO_MODE=false`.
 
 A API recusa demonstração PostgreSQL em schema sem sufixo `_demo`, exceto nos testes isolados. A hospedagem Netlify exige PostgreSQL, JWT próprio e migrations previamente aplicadas. O modo de execução `NODE_ENV=production` permite o ambiente de demonstração separado; a operação real com `DEMO_MODE=false` continua sem acesso rápido. Veja [PUBLICAR-NO-NETLIFY.md](../PUBLICAR-NO-NETLIFY.md).
 
@@ -51,7 +51,7 @@ Esse comando exige DEMO_MODE=true e schema com sufixo `_demo`, registra a ação
 
 ## Banco e publicação
 
-A migration `0006_registration_settings.sql` acrescenta cidade/bairro e configuração de demonstração com RLS. Já foi aplicada na Supabase em `elo` e `elo_demo`. Para outro banco, aplique migrations com credenciais administrativas antes do deploy; o build do Netlify não executa migrations.
+A migration `0006_registration_settings.sql` acrescenta cidade/bairro e configuração de demonstração com RLS. Já foi aplicada na Supabase em `elo`, `elo_demo` e `elo_full_demo`. Para outro banco, aplique migrations com credenciais administrativas antes do deploy; o build do Netlify não executa migrations.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\make.ps1 db-migrate
